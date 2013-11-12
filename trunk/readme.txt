@@ -1,5 +1,5 @@
 === PlusCaptcha ===
-Contributors: PlusCaptcha, SweetCaptcha, latorante, Peter Wooster
+Contributors: PlusCaptcha
 Version: 1.0.0
 Tags: pluscaptcha, captcha, antispam, comment, catcha, registration, match captcha, lost password, login, spam, images captcha, capcha, captha, ecology, ecoplus, plus
 Requires at least: 3.0.0
