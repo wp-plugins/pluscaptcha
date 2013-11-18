@@ -12,6 +12,13 @@
 	height: 230px; 
 	background-image: url("../images/instructions.png");
 }
+#personalizacion {
+	width: 960px; 
+	height: 230px; 
+	background-image: url("../images/ejemplo-personalizacion.png"); 
+	background-position: left center; 
+	background-repeat: no-repeat;
+}
 
 #plscptf_contact_form input.text, 
 #plscptf_contact_form textarea,

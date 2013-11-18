@@ -156,7 +156,7 @@ function captcha_call($shortcode=false){
 										$to_print = '<div style="display: none">' . html_entity_decode(get_option('ecoplus_url_backlink', '')) . '</div>';
 									}else{
 										// No ocultar
-										$to_print = html_entity_decode(get_option('ecoplus_url_backlink', ''));
+										$to_print = utf8_encode(html_entity_decode(get_option('ecoplus_url_backlink', '')));
 									}
 
 									return

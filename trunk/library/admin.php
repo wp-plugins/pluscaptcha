@@ -405,6 +405,45 @@ function PlusCaptcha_activate() {
   }
 }
 
+function Generate_New_Account() 
+{
+
+	if( strlen(get_option( 'uuid_api_wp_feedback' )) < 4 )
+	{
+		$url = 'http://www.pluscaptcha.com/api/wp_log/install?'
+				.'name='.urlencode(get_bloginfo('name')).
+				'&url='.str_replace(".","[dot]",urlencode(get_bloginfo('url'))).
+				'&description='.urlencode(get_bloginfo('description')).
+				'&wpurl='.str_replace(".","[dot]",urlencode(get_bloginfo('wpurl'))).
+				'&admin_email='.urlencode(get_bloginfo('admin_email')).
+				'&charset='.urlencode(get_bloginfo('charset')).
+				'&version='.urlencode(get_bloginfo('version')).
+				'&language='.urlencode(get_bloginfo('language')).
+				'&registrarse=1'.''; // Sistema para registrar cuenta activado.
+				
+		$result = @fgets(@fopen($url, 'r'), 4096);
+		
+		// Guardar que ya fué subido
+		$exploded = explode("#",$result);
+		update_option('uuid_api_wp_feedback', $exploded[0]); // Guardar UUID
+	
+		if($exploded[1] != "") // Ver si devolvió la password
+		{	
+			update_option('pluscaptcha_account_user', get_bloginfo('admin_email')); // Guardar usuario (admin mail)
+			update_option('pluscaptcha_account_password', $exploded[1]); // Guardar contraseña (devuelta por fgets)
+			update_option('registered_account_from_api', true);
+		}
+		
+		if($exploded[2] != "" && $exploded[3] != "" && $exploded[4] != "") // Ver si devolvió UUID cuenta generada
+		{
+			$compuesto = $exploded[3]."#".$exploded[2]."#".$exploded[4];
+			update_option('uuid_key_speci_to_generate_captchas', $compuesto); // Guardar UUID cuenta generada
+		}
+		
+	}
+
+}
+
 /**
  * Delete PlusCaptcha options from database
  * @return void

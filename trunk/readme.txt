@@ -1,6 +1,6 @@
 === PlusCaptcha ===
 Contributors: PlusCaptcha
-Version: 1.0.0
+Version: 1.1.0
 Tags: pluscaptcha, captcha, antispam, comment, catcha, registration, match captcha, lost password, login, spam, images captcha, capcha, captha, ecology, ecoplus, plus
 Requires at least: 3.0.0
 Tested up to: 3.5
@@ -86,8 +86,12 @@ Why 10 years? Because we are looking for a company of 100 years, and we think th
 
 == Changelog ==
 
+= 1.1 =
+* New: System to automatically PlusCaptcha account creation.
+* Fix: UTF-8 bug.
+
 = 1.0 =
 * Release version.
-* Do not forget feedback to support@pluscaptcha.com
+* Do not forget feedback to support@pluscaptcha.com.
 
 == Upgrade Notice ==
