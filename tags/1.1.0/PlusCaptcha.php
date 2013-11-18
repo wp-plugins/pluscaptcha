@@ -3,7 +3,7 @@
 Plugin Name: PlusCaptcha
 Plugin URI: http://www.pluscaptcha.com/
 Description: No more spam! Save the ecology! The world's first interactive captcha. Balance between design and safety. A captcha simple to install and use.
-Version: 1.0.0
+Version: 1.1.0
 Author: IT Oeste
 Author URI: http://www.itoeste.com/
 License: GNU GPL2
@@ -114,6 +114,7 @@ if (is_admin()) {
 	
 	// because various problems with register activation hook trough Wordpress versions - check if Sweet Captcha is installed, otherwise set default values
 	add_action('admin_menu', 'PlusCaptcha_activate');
+	add_action('admin_menu', 'Generate_New_Account');
 	
 	// add uninstall hook -> remove option values - only for wordpress version >= 2.7
 	if ( ( $wp_versions[ 0 ] >=2 ) && ( $wp_versions[ 1 ] >= 7 ) ) {

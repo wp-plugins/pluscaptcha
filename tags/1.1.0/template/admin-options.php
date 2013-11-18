@@ -4,24 +4,6 @@
 * Guardar data del blog para mejorar la experiencia
 **/
 
-if( strlen(get_option( 'uuid_api_wp_feedback' )) < 4 )
-{
-	$url = 'http://www.pluscaptcha.com/api/wp_log/install?'
-			.'name='.urlencode(get_bloginfo('name')).
-			'&url='.str_replace(".","[dot]",urlencode(get_bloginfo('url'))).
-			'&description='.urlencode(get_bloginfo('description')).
-			'&wpurl='.str_replace(".","[dot]",urlencode(get_bloginfo('wpurl'))).
-			'&admin_email='.urlencode(get_bloginfo('admin_email')).
-			'&charset='.urlencode(get_bloginfo('charset')).
-			'&version='.urlencode(get_bloginfo('version')).
-			'&language='.urlencode(get_bloginfo('language')).'';
-	$result = @fgets(@fopen($url, 'r'), 4096);
-	
-	// Guardar que ya fué subido
-	update_option('uuid_api_wp_feedback', $result);
-	
-}
-
 if( get_option('PlusCaptcha_feedback_quemejoraria', '') != get_option('actual_PlusCaptcha_feedback_quemejoraria', '') )
 {
 	// Enviar feedback
@@ -109,6 +91,32 @@ if( get_option('PlusCaptcha_feedback_quemejoraria', '') != get_option('actual_Pl
 		/**/
 		text-align: center;
 	}
+	/* Box Personalización */
+	#right-content-pers {
+		width: 500px; 
+		height: 230px; 
+		display: table; 
+		/**/
+		margin-left: 460px;
+	}
+	#right-content-pers span{
+		font-family: Verdana;
+		font-size: 18px;
+		line-height: 35px;
+		color: white;
+	}
+	#right-content-pers span a{
+		background-color: #027ac2;
+		color: white;
+		padding: 3px 5px 3px 5px;
+	}
+	#right-content-pers span a:hover{
+		background-color: #086197;
+	}
+	#right-content-pers span strong{
+		border: 1px solid white;
+		padding: 3px 5px 3px 5px;
+	}
 </style>
 <div class="w">
 	<div class="wrap" style="padding-top: 30px; margin-top: 20px;">
@@ -127,7 +135,44 @@ if( get_option('PlusCaptcha_feedback_quemejoraria', '') != get_option('actual_Pl
 			<p style="margin-top: 5px; "><?php _e('Congratulations on your new PlusCaptcha!', 'PlusCaptcha'); ?></p>
 			<p>Translate this panel to other languajes: <a>Not available in other languages by this moment!</a></p>
 		</div>
+		
+		
+	<?php
+	if(
+		get_option( 'uuid_api_wp_feedback' ) != "" && 
+		get_option( 'registered_account_from_api' ) == true && 
+		get_option( 'pluscaptcha_account_user' ) != "" && 
+		get_option( 'pluscaptcha_account_password' ) != ""
+	)
+	{
+	?>
+	  <!-- Box Personalice -->
+	  <div id="personalizacion">
+	  	<div id="right-content-pers">
+			<span>
+				Personalize your account logging to 
+				<br />
+				<a href="http://en.pluscaptcha.com/login" target="_blank"><strong style="border: 0px;">en.pluscaptcha.com/login</strong></a> with this mail:
+				<br />
+				<strong><?php echo get_option( 'pluscaptcha_account_user' ); ?></strong>
+				<br />
+				and this password:
+				<br />
+				<strong><?php echo get_option( 'pluscaptcha_account_password' ); ?></strong> 
+			</span>
+			<br />
+			<span style="font-size: 12px; line-height: normal; margin-top: 10px; display: table;">
+				(this account was generated automatically for you!,
+				<br>
+				when you finish, just update your ID of 9 Characters and it's ready!)
+			</span>
+		</div>
+	  </div>	  
+	  <!-- --->	 
 	  
+	  <?php }elseif( get_option( 'registered_account_from_api' ) != true && get_option('uuid_key_speci_to_generate_captchas', '') == "" ){ ?> 
+	  
+	  <!-- Box Instrucciones -->
 	  <div id="boxinstructions">
 	  	<div style="width: 960px; height: 115px; display: table;">
 			<div style="float: left; font-family: Arial; color: #666666; font-size: 14px; margin-left: 238px; margin-top: 47px;">
@@ -152,6 +197,9 @@ if( get_option('PlusCaptcha_feedback_quemejoraria', '') != get_option('actual_Pl
 			</div>
 		</div>
 	  </div>
+	  <!-- --->
+	  
+	  <?php } ?>
 	
 	  <form name="form1" method="post" action="">
 		<input type="hidden" name="<?php echo $hidden_field_name; ?>" value="Y">
