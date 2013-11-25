@@ -1,6 +1,6 @@
 === PlusCaptcha ===
 Contributors: PlusCaptcha
-Version: 1.1.0
+Version: 1.1.1
 Tags: pluscaptcha, captcha, antispam, comment, catcha, registration, match captcha, lost password, login, spam, images captcha, capcha, captha, ecology, ecoplus, plus
 Requires at least: 3.0.0
 Tested up to: 3.5
@@ -10,40 +10,89 @@ PlusCaptcha - No more spam! Save the ecology! The world's first interactive capt
 
 == Description ==
 
+The first dinamic captcha provider. **Art to your visitors, simple tool to you!**
 
-The first dinamic captcha provider. Art to your visitors, simple tool to you!
+An evolution of the protection from bots and people without good intentions. Simple to install, simple to use, secure and at the same time help with **EcoPlus**, the biggest ecology project.
 
+= Features =
 
-= PlusCaptcha it's Free (10 years) =
+* Simple to setup.
+* **NO MORE** maths, read words, colors, etc!
+* Automatically account generation **(NEW!)**.
+* Size, color, difficulty personalization.
+* Doesn't need instructions to use and setup **(NEW!)**.
+* Low bounce percent.
+* Weekly upgrades.
 
-It's free by 10 years. If you wanna know why clicking [__here (spanish)__](http://blog.pluscaptcha.com/10-anos-gratis/), but obviously you can help us with your [__feedback__](http://en.pluscaptcha.com/contacto), [__donation__](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=cheeki%40hotmail%2ecom%2ear&lc=GB&item_name=EcoPlus%20%40%20PlusCaptcha%20%2d%20Save%20the%20ecology&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest) or just using the plugin!
+= Popular Browsers Support =
 
+* **IE** - IE6+
+* **Firefox** - All versions
+* **Chrome** - All versions
+* **Safari** - All versions
+* **Opera** - All versions
+* **Android (NEW!)** - All versions
+* **Mobile Safari (NEW!)** - All versions
 
-= Read words? Colors? Math Problems? All this it's insecure! =
+= Other Browsers Support (NEW!) =
 
-The captchas with words and numbers distortion was good. But the technology able to solve it in a high percent.  Just read the next recently news about convetional captchas in [__mashable (en)__](http://mashable.com/2013/10/28/captcha-defeated/) or [__genbeta (sp)__](http://www.genbeta.com/seguridad/vicarious-por-casualidad-desarrolla-un-sistema-capaz-de-resolver-el-90-de-los-captchas).
+* AOL
+* **BlackBerry (NEW!)**
+* Camino
+* Dillo
+* Konqueror
+* Lynx
+* Mozilla
+* Netscape
+* Seamonkey
+* Shiira
 
+= Contact Options =
 
-= One Solution For All Devices =
+* **General Info / Questions** - info[at]pluscaptcha.com
+* **Support / Bug** - support[at]pluscaptcha.com
+* **Direct Contact with Manager** - denis[at]pluscaptcha.com
 
-PlusCaptcha have 3 type of captchas:
-* HTML5, to devices who support it.
-* JQuery (Javascript), for a little percent of old browsers.
-* Mail Validation, to all other browsers like of low-cost phones.
+= Now you be part of Thousand Webmasters and Bloggers who Promote Ecology! =
 
-= Save the Ecology with Ecoplus =
+PlusCaptcha apart of be a CAPTCHA provider it's an conscientization tool. It's the biggest tool of concientization of the world. Imagine this: every webmaster when setup PlusCaptcha is helping with **EcoPlus** (name of the ecology project), every person who see the nature image becomes aware about the little and fragile world where we live.
 
-EcoPlus it's an ecology conscientization project. But too it's an action project. We will made a lot of ecologic actions to try to help save the planet. You can read more about EcoPlus [__here (sp)__](http://blog.pluscaptcha.com/un-plus-humano/) and looking for news at [__here__](http://blog.pluscaptcha.com/category/ecoplus/).
+**Now, do you can see the Powerfull Tool what is PlusCaptcha?**
 
-= PlusCaptcha Integration with WordPress =
+= Because it's Simple from Every Point of View =
 
-PlusCaptcha protects the following:
-* Integrated Form (with shortcode)
-* Comment form
-* Login form
-* Lost password form
+Simple to install and use, and the most simple way to help the ecology.
+**Just download, activate and it's ready to use** but, if you wanna you can too personalize your account with: **color, size, difficulty and other options!**
 
-= Remember made your feedback. Thats let to us make a bigger and better service. =
+= Because is One Solution For All Devices =
+
+1. HTML5, to devices who support it.
+2. JQuery (Javascript), for a little percent of old browsers.
+3. Mail Validation, to all other browsers like of low-cost phones.
+
+= Because is Fully Integrated with WordPress =
+
+1. Integrated Form (with shortcode)
+2. Comment form
+3. Login form
+4. Lost password form
+
+= Because is the Evolution of the old and insecure CAPTCHAS. =
+
+The **"blind strip" (unique technology from PlusCaptcha)** able us to provide the unique CAPTCHA immunity from bots.
+
+= Because is Free by 10 Years =
+
+When your free period expire in 10 years you will able to pay as you want, like a donation. **If not, no problem!** We will provide the same amazing service to you like the first day.
+
+= Because we have two big targets =
+
+1. Work together with your help to **save the ecology**.
+2. Be the most secure and armony CAPTCHA provider of the world.
+
+= Hey! You can help too! =
+
+Help to us translating our website and able to share the oportunity to setup PlusCaptcha in another countries and thats will help to us with our ecology project and meet new developers and communities. Just contact us to: support[at]pluscaptcha.com
 
 == Installation ==
 
@@ -53,23 +102,15 @@ PlusCaptcha protects the following:
 
 3. Go to PlusCaptcha settings (under "Settings").
 
-4. Create an New Account at www.pluscaptcha.com
+At this point, **your account was created automatically (NEW FEATURE!) and you don't need to do more!**, if not, you can do it with next steps:
+
+4. Create a New Account at www.pluscaptcha.com
 
 5. Paste the UUID (code by 9 characters).
 
 6. Save the Settings and Enjoy!
 
-== Frequently Asked Questions ==
-
-= What is CAPTCHA? =
-
-A CAPTCHA is a type of challenge-response test used in computing as an attempt to ensure that the response is generated by a person. The term CAPTCHA is an acronym based on the word "capture" and standing for Completely Automated Public Turing test to tell Computers and Humans Apart. Invented by Luis von Ahn, defeated by the bots today.
-
-= It's Free =
-
-Technically no. It's free by 10 years. But we estimate the life time of an website and it's less than 3 years. Later, the price will be defined the same user with the "price" of the quality service we provide. The value will be specific by the webmaster, not by us.
-
-Why 10 years? Because we are looking for a company of 100 years, and we think this is our first step.
+**Remember (NEW FEATURE!): if your account was created automatically, you can personalize it with the user and password provided in the PlusCaptcha Settings Control Panel.**
 
 == Screenshots ==
 
@@ -86,12 +127,16 @@ Why 10 years? Because we are looking for a company of 100 years, and we think th
 
 == Changelog ==
 
+= 1.1.1 =
+* New: List of Browsers Supported and New Features.
+* Edited information about the plugin.
+
 = 1.1 =
 * New: System to automatically PlusCaptcha account creation.
 * Fix: UTF-8 bug.
 
 = 1.0 =
 * Release version.
-* Do not forget feedback to support@pluscaptcha.com.
+* Do not forget feedback to support[at]pluscaptcha.com.
 
 == Upgrade Notice ==
