@@ -32,15 +32,6 @@ if (!class_exists('wpCommentFormInlineErrors')){
         private function displayAdminError($error) { echo '<div id="message" class="error"><p><strong>' . $error . '</strong></p></div>';  }
 
 
-        /************************ Let's do this. ************************/
-
-        /**
-         * Overwrites wordpress error handeling.
-         *
-         * @param $handler
-         * @return array
-         */
-
         function getWpDieHandler($handler){ return array($this, 'handleWpError'); }
 
 
@@ -56,25 +47,19 @@ if (!class_exists('wpCommentFormInlineErrors')){
 
         function handleWpError($message, $title='', $args=array())
         {
-            // this is simple, if it's not admin error, and we simply continue
-            // and sort it our way. Meaning, send errors to form itself and display them thru $_SESSION.
-            // and yes, we test if comment id is present, not sure how else to test if commenting featured is being used :)
             if(!is_admin() && !empty($_POST['comment_post_ID']) && is_numeric($_POST['comment_post_ID'])){
                 $_SESSION['formError'] = $message;
-                // let's save those form fields in session as well hey? bit annoying
-                // filling everything again and again. might work
                 $denied = array('submit', 'comment_post_ID', 'comment_parent');
                 foreach($_POST as $key => $value){
                     if(!in_array($key, $denied)){
                         $_SESSION['formFields'][$key] = stripslashes($value);
                     }
                 }
-                // write, redirect, go
                 session_write_close();
                 wp_safe_redirect(get_permalink($_POST['comment_post_ID']) . '#formError', 302);
                 exit;
             } else {
-                _default_wp_die_handler($message, $title, $args);   // this is for the other errors
+                _default_wp_die_handler($message, $title, $args);
             }
         }
 

@@ -1,6 +1,6 @@
 === PlusCaptcha ===
 Contributors: PlusCaptcha
-Version: 1.1.2
+Version: 1.2.0
 Tags: pluscaptcha, captcha, antispam, comment, catcha, registration, match captcha, lost password, login, spam, images captcha, capcha, captha, ecology, ecoplus, plus, buddypress, contact form 7, sweetcaptcha, text captcha, multilingual, register, admin, ajax, image, images, keycaptcha, plugin, post, akismet, wpmu, re captcha, recaptcha, wordpress captcha, picture captcha
 Requires at least: 3.0.0
 Tested up to: 3.5
@@ -127,6 +127,9 @@ At this point, **your account was created automatically (NEW FEATURE!) and you d
 
 == Changelog ==
 
+= 1.2.0 =
+* Little Plugin Size Reduction.
+
 = 1.1.2 =
 * New: News section was added.
 
@@ -144,6 +147,9 @@ At this point, **your account was created automatically (NEW FEATURE!) and you d
 
 == Upgrade Notice ==
 
+= 1.2.0 =
+Little Plugin Size Reduction.
+
 = 1.1.2 =
 News section was added.
 
@@ -152,12 +158,3 @@ List of browsers supported and new features.
 
 = 1.1 =
 Important bug fixed.
-
-== News ==
-
-= 12 Dicember 2013 =
-* This will be our new section to paste news about PlusCaptcha in english. Otherwise you can read our official blog in spanish: blog.pluscaptcha.com
-* All our captchas was changed to be part of EcoPlus, our ecology project.
-* We are working in two things: solve a bug when firewall blocks de plugin and create our EcoRank (EcoPlus log), thats where do you will see your EcoImpact.
-
-**Important: The old news don't be will displayed here, if you wanna know more about us read our blog (spanish): blog.pluscaptcha.com**

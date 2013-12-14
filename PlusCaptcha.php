@@ -3,7 +3,7 @@
 Plugin Name: PlusCaptcha
 Plugin URI: http://www.pluscaptcha.com/
 Description: No more spam! Save the ecology! The world's first interactive captcha. Balance between design and safety. A captcha simple to install and use.
-Version: 1.1.2
+Version: 1.2.0
 Author: IT Oeste
 Author URI: http://www.itoeste.com/
 License: GNU GPL2
@@ -78,11 +78,7 @@ add_action('init', 'PlusCaptcha_init', 10);
 function PlusCaptcha_init() {
   //global $wpdb;
   wp_enqueue_script('jquery');
-  // TODO: http://www.pluscaptcha.com/min/?f=res/js/captchi.jquery-ui-1.8.6.custom.min.js -> v1.9.2 - 2012-11-27
-  //wp_enqueue_script( 'jquery-ui.custom', plugins_url( 'js/jquery-ui.custom.min.js', __FILE__ ) ); // v1.9.2 - 2012-11-27
-  //wp_enqueue_script('jquery-ui-core'); // use WP jquery.ui.core.min.js
-  
-  wp_enqueue_script('jquery-ui-core', false, array('jquery'));
+   wp_enqueue_script('jquery-ui-core', false, array('jquery'));
   wp_enqueue_script('jquery-ui-draggable', false, array('jquery'));
   wp_enqueue_script('jquery-ui-droppable', false, array('jquery'));
   wp_enqueue_script( 'plscptf', plugins_url( 'js/plscptf.js', __FILE__ ) );
@@ -105,12 +101,7 @@ wp_enqueue_style( 'PlusCaptcha_Stylesheet', plugins_url( 'css/style.css', __FILE
 if (is_admin()) {
 	require_once PlusCaptcha_LIBRARY . '/admin.php';
 	// Add admin notices.
-	//add_action('admin_notices', 'PlusCaptcha_admin_notices');
-	// add link to settings menu
 	add_action('admin_menu', 'PlusCaptcha_admin_menu');
-	
-	// TODO: add activation hook -> default option values - XXX - doesn't work since wp 3.1 and below 2.8
-	//register_activation_hook( __FILE__, 'PlusCaptcha_activate' );
 	
 	// because various problems with register activation hook trough Wordpress versions - check if Sweet Captcha is installed, otherwise set default values
 	add_action('admin_menu', 'PlusCaptcha_activate');
@@ -150,30 +141,9 @@ if (is_admin()) {
 		add_filter( 'allow_password_reset', 'PlusCaptcha_lost_password_check', 1 );
 	}
 	
-	// add Sweet Captcha to registration form
-	/*if ( get_option( 'PlusCaptcha_form_registration' ) ) {
-		add_action('register_form', 'PlusCaptcha_registration_form' );
-		add_filter('registration_errors', 'PlusCaptcha_register_form_check', 1);
-		
-		add_action('bp_before_registration_submit_buttons', 'PlusCaptcha_before_registration_submit_buttons' );
-		add_action('bp_signup_validate', 'PlusCaptcha_signup_validate' );
-		
-		// adding PlusCaptcha to Network Wordpress registration form - WP version >= 3
-		if ( ( $wp_versions[ 0 ] > 2 ) ) {
-			add_action('signup_extra_fields', 'PlusCaptcha_signup_extra_fields' );
-			add_filter('wpmu_validate_user_signup', 'PlusCaptcha_wpmu_validate_user_signup' );
-		}
-	}*/
 }
 
 // PlusCaptcha Contact Form 
 if ( get_option( 'PlusCaptcha_form_contact' ) ) {
   require_once 'library/shortcode-and-others.php';
 }
-
-/* Sample of adding header to PlusCaptcha form */
-/*
-function PlusCaptcha_header() {
-  return '<label>Captcha Anti-Spam Question (required)</label>';
-}
-*/
