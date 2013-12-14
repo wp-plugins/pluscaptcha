@@ -1,6 +1,5 @@
 <?php
 // Display PlusCaptcha Contact Form in front end - page or post
-//**********************************************************************************************************************
 if (!function_exists('plscptf_display_form')) {
 
   function plscptf_display_form() {
@@ -116,14 +115,12 @@ if (!function_exists('plscptf_check_and_send')) {
   }
 
 }
-//**********************************************************************************************************************
 // Check PlusCaptcha Contact Form input data
 if (!function_exists('plscptf_check_form')) {
 
   function plscptf_check_form() {
     global $error_message;
     global $plscptf_options;
-    //$path_of_uploaded_file = '';
     if (empty($plscptf_options))
       $plscptf_options = get_option('PlusCaptcha_form_contact_options');
     $result = "";
@@ -156,7 +153,6 @@ if (!function_exists('plscptf_check_form')) {
 
 }
 
-//**********************************************************************************************************************
 // Send mail function
 if (!function_exists('plscptf_send_mail')) {
 
@@ -286,7 +282,6 @@ if (!function_exists('plscptf_send_mail')) {
 
 }
 
-//**********************************************************************************************************************
 function plscptf_clean_input($string, $preserve_space = 0) {
   if (is_string($string)) {
     if ($preserve_space) {
@@ -304,7 +299,6 @@ function plscptf_clean_input($string, $preserve_space = 0) {
   }
 }
 
-//**********************************************************************************************************************
 // protect and validate form vars
 
 function plscptf_sanitize_string($string, $preserve_space = 0) {
@@ -314,7 +308,6 @@ function plscptf_sanitize_string($string, $preserve_space = 0) {
   return preg_replace("/[<>]/", '_', $string);
 }
 
-//**********************************************************************************************************************
 function plscptf_email_name_filter($data) {
   global $plscptf_options;
   if (isset($plscptf_options['plscptf_from_field']) && trim($plscptf_options['plscptf_from_field']) != "")
@@ -323,7 +316,6 @@ function plscptf_email_name_filter($data) {
     return $data;
 }
 
-//**********************************************************************************************************************
 function PlusCaptcha_validate_contact_form(&$errors) {
 	global $PlusCaptcha_instance;
 	//$scValues = PlusCaptcha_get_values();
@@ -334,8 +326,6 @@ function PlusCaptcha_validate_contact_form(&$errors) {
 	}
 	return $errors;
 }
-
-//**********************************************************************************************************************
 
 add_shortcode('im_helping_with_ecoplus', 'plscptf_display_form');
 add_action('init', 'plscptf_check_and_send');
