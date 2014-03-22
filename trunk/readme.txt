@@ -1,6 +1,6 @@
 === PlusCaptcha ===
 Contributors: PlusCaptcha
-Version: 1.2.0
+Version: 1.2.1
 Tags: pluscaptcha, captcha, antispam, comment, catcha, registration, match captcha, lost password, login, spam, images captcha, capcha, captha, ecology, ecoplus, plus, buddypress, contact form 7, sweetcaptcha, text captcha, multilingual, register, admin, ajax, image, images, keycaptcha, plugin, post, akismet, wpmu, re captcha, recaptcha, wordpress captcha, picture captcha
 Requires at least: 3.0.0
 Tested up to: 3.5
@@ -127,6 +127,9 @@ At this point, **your account was created automatically (NEW FEATURE!) and you d
 
 == Changelog ==
 
+= 1.2.1 =
+* Default Hided Link
+
 = 1.2.0 =
 * Little Plugin Size Reduction.
 
@@ -146,6 +149,9 @@ At this point, **your account was created automatically (NEW FEATURE!) and you d
 * Do not forget feedback to support[at]pluscaptcha.com.
 
 == Upgrade Notice ==
+
+= 1.2.1 =
+Default Hide Backlin to Maintaining Good Aesthetics
 
 = 1.2.0 =
 Little Plugin Size Reduction.
