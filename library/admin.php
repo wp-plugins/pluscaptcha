@@ -384,7 +384,7 @@ function PlusCaptcha_activate() {
       //'PlusCaptcha_secret' => '',
       //'PlusCaptcha_public_url' => '/wp-content/plugins/PlusCaptcha/library/PlusCaptcha.php',
       'PlusCaptcha_form_omit_users' => '1',
-	  'PlusCaptcha_form_omit_backlink' => '0',
+	  'PlusCaptcha_form_omit_backlink' => '1',
 	  'PlusCaptcha_form_feedback' => '1',
 	  'PlusCaptcha_form_feedback' => '1',
       'PlusCaptcha_form_registration' => '0',
