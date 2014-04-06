@@ -6,7 +6,7 @@ Requires at least: 3.0.0
 Tested up to: 3.5
 Stable tag: trunk
 
-PlusCaptcha - No more spam! Save the ecology! The world's first interactive captcha. Balance between design and safety.
+PlusCaptcha - No more spam. Easy Auto Setup. Personalize to your style. Free!
 
 == Description ==
 
