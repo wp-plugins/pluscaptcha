@@ -51,7 +51,6 @@ An evolution of the protection from bots and people without good intentions. Sim
 
 * **General Info / Questions** - info[at]pluscaptcha.com
 * **Support / Bug** - support[at]pluscaptcha.com
-* **Direct Contact with Manager** - denis[at]pluscaptcha.com
 
 = Now you be part of Thousand Webmasters and Bloggers who Promote Ecology! =
 
