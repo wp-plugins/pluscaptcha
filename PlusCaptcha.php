@@ -2,7 +2,7 @@
 /*
 Plugin Name: PlusCaptcha
 Plugin URI: http://www.pluscaptcha.com/
-Description: No more spam! Save the ecology! The world's first interactive captcha. Balance between design and safety. A captcha simple to install and use.
+Description: PlusCaptcha - No more spam. Easy Auto Setup. Personalize to your style. Free!
 Version: 1.2.1
 Author: IT Oeste
 Author URI: http://www.itoeste.com/
