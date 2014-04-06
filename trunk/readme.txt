@@ -18,10 +18,10 @@ An evolution of the protection from bots and people without good intentions. Sim
 
 * Simple to setup.
 * **NO MORE** maths, read words, colors, etc!
-* Automatically account generation **(NEW!)**.
+* Automatic account generation **(NEW!)**.
 * Size, color, difficulty personalization.
-* Doesn't need instructions to use and setup **(NEW!)**.
-* Low bounce percent.
+* No instructions needed to setup and operate **(NEW!)**.
+* Low bounce percentage.
 * Weekly upgrades.
 
 = Popular Browsers Support =
