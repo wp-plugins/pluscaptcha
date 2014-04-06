@@ -6,7 +6,7 @@ Requires at least: 3.0.0
 Tested up to: 3.5
 Stable tag: trunk
 
-PlusCaptcha - No more spam. Easy Auto Setup. Personalize to your style. Free!
+PlusCaptcha - No more Spam, Easy Set-Up, you can Personalise it. Plus it's FREE!
 
 == Description ==
 
