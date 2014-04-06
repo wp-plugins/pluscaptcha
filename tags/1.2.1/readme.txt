@@ -6,7 +6,7 @@ Requires at least: 3.0.0
 Tested up to: 3.5
 Stable tag: trunk
 
-PlusCaptcha - No more spam. Easy Auto Setup. Personalize to your style. Free!
+PlusCaptcha - No more Spam, Easy Set-Up, you can Personalise it. Plus it's FREE!
 
 == Description ==
 
@@ -51,7 +51,6 @@ An evolution of the protection from bots and people without good intentions. Sim
 
 * **General Info / Questions** - info[at]pluscaptcha.com
 * **Support / Bug** - support[at]pluscaptcha.com
-* **Direct Contact with Manager** - denis[at]pluscaptcha.com
 
 = Now you be part of Thousand Webmasters and Bloggers who Promote Ecology! =
 
