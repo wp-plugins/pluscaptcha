@@ -4,8 +4,8 @@ Plugin Name: PlusCaptcha
 Plugin URI: http://www.pluscaptcha.com/
 Description: PlusCaptcha - No more Spam, Easy Set-Up, you can Personalise it. Plus it's FREE!
 Version: 1.2.1
-Author: IT Oeste
-Author URI: http://www.itoeste.com/
+Author: PlusCaptcha
+Author URI: http://www.pluscaptcha.com/
 License: GNU GPL2
 */
 /*
