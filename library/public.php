@@ -57,14 +57,15 @@ function get_result($entrada,$shortcode=false) {
  * @return string
  */
 function PlusCaptcha_move_submit_button() {
-	return '<div id="PlusCaptcha-submit-button" class="form-submit"><br /></div>'.
+	return '<div id="PlusCaptcha-submit-button" class="form-submit"></div>'.
 		'<script type="text/javascript">'.
 			'var sub = document.getElementById("submit");'.
 			'if (sub!=undefined){'.
 			'sub.parentNode.removeChild(sub);'.
 			'document.getElementById("PlusCaptcha-submit-button").appendChild (sub);'.
 			'document.getElementById("submit").tabIndex = 6;}'.
-		'</script>';
+		'</script>
+		<br />';
 }
 
 function captcha_call($shortcode=false){
@@ -151,16 +152,6 @@ function captcha_call($shortcode=false){
 									}else{
 										simpleSessionSet("contacto_shortcode", $value_to_set);
 									}
-									
-									// Ver si ocultar backlink
-									if(get_option( 'PlusCaptcha_form_omit_backlink' ))
-									{
-										// Ocultarlo
-										//$to_print = '<div style="display: none">' . html_entity_decode(get_option('ecoplus_url_backlink', '')) . '</div>';
-									}else{
-										// No ocultar
-										$to_print = utf8_encode(html_entity_decode(get_option('ecoplus_url_backlink', '')));
-									}
 
 									return
 									
@@ -168,10 +159,6 @@ function captcha_call($shortcode=false){
 
 									    <iframe src="http://'.$Hostausar.'/i?iduso='.$uidus.'"  
 									    width="'.$width.'" height="'.$height.'" scrolling="no" frameborder="0"></iframe>  
-										
-										<!-- If you delete this backlink you will not help more us to salve the planet, think it! @ EcoPlus power by PlusCaptcha -->
-										<!-- Si borra este backlink no nos estará ayudando más a salvar este planeta, piense en ello ántes de hacerlo @ EcoPlus power by PlusCaptcha -->										
-										'.$to_print.' 
 
 									</div>';
 									
