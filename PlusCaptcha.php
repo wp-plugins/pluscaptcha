@@ -3,7 +3,7 @@
 Plugin Name: PlusCaptcha
 Plugin URI: http://www.pluscaptcha.com/
 Description: PlusCaptcha - No more Spam, Easy Set-Up, you can Personalise it. Plus it's FREE!
-Version: 2.0.3
+Version: 2.0.4
 Author: PlusCaptcha
 Author URI: http://www.pluscaptcha.com/
 License: GNU GPL2

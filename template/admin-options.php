@@ -41,8 +41,8 @@ if( $message != "" && $status || strlen(get_option('uuid_key_speci_to_generate_c
 }
 ?>
 
-<div class="w">
-	<div class="wrap" style="padding-top: 30px; margin-top: 20px;">
+<div class="w_private">
+	<div class="wrap_private" style="padding-top: 30px; margin-top: 20px;">
 		
 		<style type="text/css">
 		.ShortData .Data {

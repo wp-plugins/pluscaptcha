@@ -1,3 +1,16 @@
+.wrap_private{
+	width: 960px;
+	padding: 0 0 30px 50px;
+	color: white;
+	margin: auto;
+}
+.w_private {
+	width: 98%;
+	height: auto;
+	background-color: #063958;
+	/**/
+	font-size: 14px;
+}
 .wrap #icon-options-PlusCaptcha {
 	background: url("../images/pluscaptcha_logo_black_orange.png") no-repeat scroll left top;
   	background-size: 186px 71px;
@@ -195,13 +208,6 @@ span.error {
 
 	#wpbody-content {
 		/**/
-	}
-	.w {
-		width: 98%;
-		height: auto;
-		background-color: #063958;
-		/**/
-		font-size: 14px;
 	}
 	label {
 		text-shadow: none;
