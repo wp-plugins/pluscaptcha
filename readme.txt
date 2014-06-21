@@ -1,6 +1,6 @@
 === PlusCaptcha ===
 Contributors: PlusCaptcha
-Version: 2.0.2
+Version: 2.0.3
 Tags: pluscaptcha, captcha, antispam, comment, catcha, registration, match captcha, lost password, login, spam, images captcha, capcha, captha, ecology, ecoplus, plus, buddypress, contact form 7, sweetcaptcha, text captcha, multilingual, register, admin, ajax, image, images, keycaptcha, plugin, post, akismet, wpmu, re captcha, recaptcha, wordpress captcha, picture captcha
 Requires at least: 3.0.0
 Tested up to: 3.9.1
@@ -132,6 +132,9 @@ At this point, **your account was created automatically (NEW FEATURE!) and you d
 * Outside connection hosting by fopen().
 
 == Changelog ==
+
+= 2.0.3 =
+* .Wrap color fixed.
 
 = 2.0.2 =
 * Provided more margin and change structure of comment form.
