@@ -19,12 +19,9 @@ $PlusCaptcha_options = array(
     'PlusCaptcha_form_lost' => array('title' => __('Captcha in Password Recovery of Login', 'PlusCaptcha')),
     'PlusCaptcha_form_login' => array('title' => __('Captcha in Login Form', 'PlusCaptcha')),
 	    'PlusCaptcha_form_omit_users' => array('title' => __('Hide Captcha to Logged Users', 'PlusCaptcha')),
-	    'PlusCaptcha_form_omit_backlink' => array('title' => __('Hide Backlink', 'PlusCaptcha'), 'description' => __('If you hide the backlink you will not Collaborate More with EcoPlus mission.', 'PlusCaptcha')),
-		'PlusCaptcha_form_feedback' => array('title' => __('Feedback Program', 'PlusCaptcha'), 'description' => __('The "Feedback Program" help to us make the service better every day. <a href="#">Read More.</a>', 'PlusCaptcha'), 'disabled' => true),
-		'PlusCaptcha_feedback_quemejoraria' => array(
-														'title' => __('What do you love of PlusCaptcha and what do you think we can amend?', 'PlusCaptcha'),
-														'maxchars' => __('maxlength="299"')
-		),
+	    //'PlusCaptcha_form_omit_backlink' => array('title' => __('Hide Backlink', 'PlusCaptcha'), 'description' => __('If you hide the backlink you will not Collaborate More with EcoPlus mission.', 'PlusCaptcha')),
+		//'PlusCaptcha_form_feedback' => array('title' => __('Feedback Program', 'PlusCaptcha'), 'description' => __('The "Feedback Program" help to us make the service better every day. <a href="#">Read More.</a>', 'PlusCaptcha'), 'disabled' => true),
+		//'PlusCaptcha_feedback_quemejoraria' => array('title' => __('What do you love of PlusCaptcha and what do you think we can amend?', 'PlusCaptcha'),'maxchars' => __('maxlength="299"')),
     'PlusCaptcha_form_contact' => array('title' => __('<b>Contact Form</b>', 'PlusCaptcha'), 'description' => __('Insert a contact form where you wanna. In one page, post, or everywhere with a simple code. Just copy this code: [im_helping_with_ecoplus] in the description of your page, post, etc.', 'PlusCaptcha')),
 );
 

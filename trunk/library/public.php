@@ -112,6 +112,8 @@ function captcha_call($shortcode=false){
 												break;
 										}
 									// Obtener backlink
+									
+									/*
 									if(get_option('ecoplus_url_backlink', '') == "")
 									{
 										// Generar backlink y almacenarlo
@@ -135,6 +137,7 @@ function captcha_call($shortcode=false){
 										}
 
 									}
+									*/
 									
 									
 									$c = 'none';
@@ -153,7 +156,7 @@ function captcha_call($shortcode=false){
 									if(get_option( 'PlusCaptcha_form_omit_backlink' ))
 									{
 										// Ocultarlo
-										$to_print = '<div style="display: none">' . html_entity_decode(get_option('ecoplus_url_backlink', '')) . '</div>';
+										//$to_print = '<div style="display: none">' . html_entity_decode(get_option('ecoplus_url_backlink', '')) . '</div>';
 									}else{
 										// No ocultar
 										$to_print = utf8_encode(html_entity_decode(get_option('ecoplus_url_backlink', '')));
