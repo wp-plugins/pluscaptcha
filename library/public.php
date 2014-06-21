@@ -57,7 +57,7 @@ function get_result($entrada,$shortcode=false) {
  * @return string
  */
 function PlusCaptcha_move_submit_button() {
-	return '<div id="PlusCaptcha-submit-button" class="form-submit"></div>'.
+	return '<div id="PlusCaptcha-submit-button" class="form-submit" style="display: table; margin-top: 20px;"></div>'.
 		'<script type="text/javascript">'.
 			'var sub = document.getElementById("submit");'.
 			'if (sub!=undefined){'.

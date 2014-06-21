@@ -317,4 +317,15 @@ span.error {
 			/**/
 			display: table;
 		}
-	
+	.comment-form-author label {
+		color: #000000;
+	}
+	.comment-form-email label {
+		color: #000000;
+	}
+	.comment-form-url label {
+		color: #000000;
+	}
+	.comment-form-comment label {
+		color: #000000;
+	}
