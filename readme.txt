@@ -133,6 +133,9 @@ At this point, **your account was created automatically (NEW FEATURE!) and you d
 
 == Changelog ==
 
+= 2.0.1 =
+* Fixed mistake provided by feedback (thanks you!)
+
 = 2.0.0 =
 * New Easy to Read Dashboard!
 * Meet and Discover other Bloggers (and promote your)
