@@ -3,13 +3,13 @@
 Plugin Name: PlusCaptcha
 Plugin URI: http://www.pluscaptcha.com/
 Description: PlusCaptcha - No more Spam, Easy Set-Up, you can Personalise it. Plus it's FREE!
-Version: 1.2.1
+Version: 2.0.0
 Author: PlusCaptcha
 Author URI: http://www.pluscaptcha.com/
 License: GNU GPL2
 */
 /*
-Copyright (C) 2013 IT Oeste. (www.pluscaptcha.com). All rights reserved.
+Copyright (C) 2014 IT Oeste. (www.pluscaptcha.com). All rights reserved.
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License,
@@ -23,6 +23,10 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+/*
+	For Irina Luchinetz & Igor Borovskoy. I'm not sure about if I could finish this project without their support. My infinite thanks to them! Thanks for make this dream possible, I know about you couldn't help to me like you would like, but this untidy house with infinite love is all I need, all everyone needs...
+		- Denis, CEO PlusCaptcha
 */
 
 /* Ocultar errores */

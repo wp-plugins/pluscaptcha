@@ -1,9 +1,9 @@
 === PlusCaptcha ===
 Contributors: PlusCaptcha
-Version: 1.2.1
+Version: 2.0.0
 Tags: pluscaptcha, captcha, antispam, comment, catcha, registration, match captcha, lost password, login, spam, images captcha, capcha, captha, ecology, ecoplus, plus, buddypress, contact form 7, sweetcaptcha, text captcha, multilingual, register, admin, ajax, image, images, keycaptcha, plugin, post, akismet, wpmu, re captcha, recaptcha, wordpress captcha, picture captcha
 Requires at least: 3.0.0
-Tested up to: 3.5
+Tested up to: 3.9.1
 Stable tag: trunk
 
 PlusCaptcha - No more Spam, Easy Set-Up, you can Personalise it. Plus it's FREE!
@@ -15,6 +15,12 @@ The first dinamic captcha provider. **Art to your visitors, simple tool to you!*
 An evolution of the protection from bots and people without good intentions. Simple to install, simple to use, secure and at the same time help with **EcoPlus**, the biggest ecology project.
 
 = Features =
+
+June 21th **Mega Update!**:
+* New Easy to Read Dashboard!
+* Meet and Discover other Bloggers (and promote your)
+* Cleanest Interface
+* Cleanest Captcha
 
 * Simple to setup.
 * **NO MORE** maths, read words, colors, etc!
@@ -51,6 +57,7 @@ An evolution of the protection from bots and people without good intentions. Sim
 
 * **General Info / Questions** - info[at]pluscaptcha.com
 * **Support / Bug** - support[at]pluscaptcha.com
+* **Emergency (24/7)** - emergency[at]pluscaptcha.com
 
 = Now you be part of Thousand Webmasters and Bloggers who Promote Ecology! =
 
@@ -125,6 +132,12 @@ At this point, **your account was created automatically (NEW FEATURE!) and you d
 * Outside connection hosting by fopen().
 
 == Changelog ==
+
+= 2.0.0 =
+* New Easy to Read Dashboard!
+* Meet and Discover other Bloggers (and promote your)
+* Cleanest Interface
+* Cleanest Captcha
 
 = 1.2.1 =
 * Default Hided Link
