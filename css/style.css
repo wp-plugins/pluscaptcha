@@ -1,3 +1,8 @@
+/* 2.0.5 fix comment form separate from footer */
+.comment-form {
+	display: table;
+	margin-bottom: 30px;
+}
 .wrap_private{
 	width: 960px;
 	padding: 0 0 30px 50px;
@@ -209,10 +214,12 @@ span.error {
 	#wpbody-content {
 		/**/
 	}
+        /*
 	label {
 		text-shadow: none;
 		color: white;
 	}
+        */
 	.informacion {
 		background-color: #dfdfe0;
 		/**/
@@ -239,10 +246,12 @@ span.error {
 	.form-table th {
 		width: 300px;
 	}
+        /*
 	input {
 		float: left;
 		margin-right: 10px;
 	}
+        */
 	/* Style del UUID box */
 	#uuid_key_speci_to_generate_captchas{
 		width: 160px;

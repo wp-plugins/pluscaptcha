@@ -1,22 +1,22 @@
 === PlusCaptcha ===
 Contributors: PlusCaptcha
-Version: 2.0.4
+Version: 2.0.5
 Tags: pluscaptcha, captcha, antispam, comment, catcha, registration, match captcha, lost password, login, spam, images captcha, capcha, captha, ecology, ecoplus, plus, buddypress, contact form 7, sweetcaptcha, text captcha, multilingual, register, admin, ajax, image, images, keycaptcha, plugin, post, akismet, wpmu, re captcha, recaptcha, wordpress captcha, picture captcha
 Requires at least: 3.0.0
 Tested up to: 3.9.1
 Stable tag: trunk
 
-PlusCaptcha - No more Spam, Easy Set-Up, you can Personalise it. Plus it's FREE!
+PlusCaptcha - Forget the spam, ugly and complicated captchas! The Easiest Captcha to Setup and Execute, with Auto-Setup Feature! TRUSTED BY +27 THOUSAND OF WEBSITES, BLOGS, E-COMMERCE AND GOVERNMENT SITES AROUND WORLD WIDE! Free Full Service with 24/7 emergency support (emergency@pluscaptcha.com) with continuously updates!
 
 == Description ==
 
 The first dinamic captcha provider. **Art to your visitors, simple tool to you!**
 
-An evolution of the protection from bots and people without good intentions. Simple to install, simple to use, secure and at the same time help with **EcoPlus**, the biggest ecology project.
+An evolution of the protection from bots and people without good intentions. Simple to install, simple to use, security at a click distance!
 
 = Features =
 
-June 21th **Mega Update!**:
+**Mega Update!**:
 * New Easy to Read Dashboard!
 * Meet and Discover other Bloggers (and promote your)
 * Cleanest Interface
@@ -133,6 +133,12 @@ At this point, **your account was created automatically (NEW FEATURE!) and you d
 
 == Changelog ==
 
+= 2.0.5 =
+* Padding footer fixed.
+* Padding form fixed.
+* Multiply themes audit.
+Credits: Mistakes reported to emergency@pluscaptcha.com (Thank to Claude @ NorwoodTeaParty.com)
+
 = 2.0.4 =
 * .Wrap and .W contextual style fixed.
 
@@ -144,7 +150,7 @@ At this point, **your account was created automatically (NEW FEATURE!) and you d
 * Fixed color letters in comment form.
 
 = 2.0.1 =
-* Fixed mistake provided by feedback to emergency@pluscaptcha.com (thank you!)
+* Fixed mistake provided by feedback to emergency@pluscaptcha.com (Thank to Claude @ NorwoodTeaParty.com)
 
 = 2.0.0 =
 * New Easy to Read Dashboard!

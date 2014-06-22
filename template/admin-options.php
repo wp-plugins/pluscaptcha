@@ -202,7 +202,7 @@ if( $message != "" && $status || strlen(get_option('uuid_key_speci_to_generate_c
 			-->
 			
 		  <?php if (!empty($message)): ?>
-			<div class="updated" style="width:91%; float: left; background-color: #FFFF99; padding-top: 30px; padding-bottom: 30px; color: #393939; border: none; padding-left: 10%; display: table;">
+			<div class="updated" style="width:91%; float: left; background-color: #FFFF99; padding-top: 30px; padding-bottom: 30px; color: #393939; border: none; padding-left: 10%; margin-left: 0px; margin-bottom: 20px; display: table;">
 			  <p><strong><?php echo $message; ?></strong></p>
 			</div>
 			<br />
@@ -287,7 +287,7 @@ if( $message != "" && $status || strlen(get_option('uuid_key_speci_to_generate_c
 				  foreach ($PlusCaptcha_options as $opt_name => $opt):
 				?>
 				<tr valign="top">
-				  <th scope="row" style="min-width: 15%"><label for="<?php echo $opt_name ?>"><?php echo $opt['title'] . ':'; ?></label></th>
+				  <th scope="row" style="min-width: 15%"><label style="color: white;" for="<?php echo $opt_name ?>"><?php echo $opt['title'] . ':'; ?></label></th>
 				  <?php
 					if (!substr_count($opt_name, '_form_')) {
 					  $type = 'text';

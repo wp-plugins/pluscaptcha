@@ -2,14 +2,14 @@
 /*
 Plugin Name: PlusCaptcha
 Plugin URI: http://www.pluscaptcha.com/
-Description: PlusCaptcha - No more Spam, Easy Set-Up, you can Personalise it. Plus it's FREE!
-Version: 2.0.4
+Description: The Easiest Captcha to Setup and Execute, with Auto-Setup Feature! Forget ugly and complicated captchas! Unique! <strong>TRUSTED BY +27 THOUSAND OF WEBSITES, BLOGS, E-COMMERCE AND GOVERNMENT SITES AROUND WORLD WIDE!</strong> Free Full Service with <strong>24/7 emergency support</strong> ( <a href="mailto:emergency@pluscaptcha.com">emergency@pluscaptcha.com</a> ) plus, with continuously updates and support! Questions? <a href="http://www.pluscaptcha.com/contacto">contact us!</a>
+Version: 2.0.5
 Author: PlusCaptcha
 Author URI: http://www.pluscaptcha.com/
 License: GNU GPL2
 */
 /*
-Copyright (C) 2014 IT Oeste. (www.pluscaptcha.com). All rights reserved.
+Copyright (c) 2014 PlusCaptcha. (www.pluscaptcha.com). All rights reserved.
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License,
