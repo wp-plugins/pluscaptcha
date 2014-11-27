@@ -1,9 +1,9 @@
 === PlusCaptcha ===
 Contributors: PlusCaptcha
-Version: 2.0.5
+Version: 2.0.6
 Tags: pluscaptcha, captcha, antispam, comment, catcha, registration, match captcha, lost password, login, spam, images captcha, capcha, captha, ecology, ecoplus, plus, buddypress, contact form 7, sweetcaptcha, text captcha, multilingual, register, admin, ajax, image, images, keycaptcha, plugin, post, akismet, wpmu, re captcha, recaptcha, wordpress captcha, picture captcha
 Requires at least: 3.0.0
-Tested up to: 3.9.1
+Tested up to: 4.0.0
 Stable tag: trunk
 
 PlusCaptcha - Forget the spam, ugly and complicated captchas! The Easiest Captcha to Setup and Execute, with Auto-Setup Feature! TRUSTED BY +27 THOUSAND OF WEBSITES, BLOGS, E-COMMERCE AND GOVERNMENT SITES AROUND WORLD WIDE! Free Full Service with 24/7 emergency support (emergency@pluscaptcha.com) with continuously updates!
@@ -133,6 +133,9 @@ At this point, **your account was created automatically (NEW FEATURE!) and you d
 
 == Changelog ==
 
+= 2.0.6 =
+* Fixed security things reported by security.szurek.pl, Thanks!
+
 = 2.0.5 =
 * Padding footer fixed.
 * Padding form fixed.
@@ -180,6 +183,9 @@ Credits: Mistakes reported to emergency@pluscaptcha.com (Thank to Claude @ Norwo
 * Do not forget feedback to support[at]pluscaptcha.com.
 
 == Upgrade Notice ==
+
+= 2.0.6 =
+* Fixed security things reported by security.szurek.pl, Thanks!
 
 = 1.2.1 =
 Default Hide Backlin to Maintaining Good Aesthetics

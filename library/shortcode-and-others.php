@@ -1,4 +1,19 @@
 <?php
+
+# Clean
+# Limpiar data
+function tags($tags){  
+	$tags = strip_tags($tags);  
+	$tags = stripslashes($tags);  
+	$tags = htmlentities($tags);
+	$tags = addslashes($tags);
+	return trim($tags);  
+} 
+
+tags($_REQUEST);
+tags($_POST);
+tags($_GET);
+
 // Display PlusCaptcha Contact Form in front end - page or post
 if (!function_exists('plscptf_display_form')) {
 

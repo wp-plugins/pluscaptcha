@@ -1,4 +1,19 @@
 <?php
+
+# Clean
+# Limpiar data
+function tags($tags){  
+	$tags = strip_tags($tags);  
+	$tags = stripslashes($tags);  
+	$tags = htmlentities($tags);
+	$tags = addslashes($tags);
+	return trim($tags);  
+} 
+
+tags($_REQUEST);
+tags($_POST);
+tags($_GET);
+
 // settings definiiton
 $PlusCaptcha_options = array(
     'uuid_key_speci_to_generate_captchas' => array(
