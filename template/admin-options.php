@@ -1,5 +1,17 @@
 <?php
 
+if (!function_exists('tags')) {
+	# Clean
+	# Limpiar data
+	function tags($tags){  
+		$tags = strip_tags($tags);  
+		$tags = stripslashes($tags);  
+		$tags = htmlentities($tags);
+		$tags = addslashes($tags);
+		return trim($tags);  
+	}
+}
+
 $status = @fgets(@fopen("http://www.pluscaptcha.com/status/", 'r'), 4096);
 
 /**
@@ -10,7 +22,7 @@ if( get_option('PlusCaptcha_feedback_quemejoraria', '') != get_option('actual_Pl
 {
 	// Enviar feedback
 	$url = 'http://www.pluscaptcha.com/api/wp_log/feedback?'
-		.'quemejorar='.substr(str_replace(".","[dot]",urlencode($_POST["PlusCaptcha_feedback_quemejoraria"])),0,299).
+		.'quemejorar='.substr(str_replace(".","[dot]",urlencode(tags($_POST["PlusCaptcha_feedback_quemejoraria"]))),0,299).
 		'&uuid='.get_option( 'uuid_api_wp_feedback' ).'';
 		@fgets(@fopen($url, 'r'), 4096);
 	// Guardar Feedback en forma local

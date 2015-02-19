@@ -1,14 +1,16 @@
 <?php
 
-# Clean
-# Limpiar data
-function tags($tags){  
-	$tags = strip_tags($tags);  
-	$tags = stripslashes($tags);  
-	$tags = htmlentities($tags);
-	$tags = addslashes($tags);
-	return trim($tags);  
-} 
+if (!function_exists('tags')) {
+	# Clean
+	# Limpiar data
+	function tags($tags){  
+		$tags = strip_tags($tags);  
+		$tags = stripslashes($tags);  
+		$tags = htmlentities($tags);
+		$tags = addslashes($tags);
+		return trim($tags);  
+	}
+}
 
 tags($_REQUEST);
 tags($_POST);
@@ -22,13 +24,13 @@ if (!function_exists('plscptf_display_form')) {
     $plscptf_options = get_option('PlusCaptcha_form_contact_options');
     $content = "";
 
-    $page_url = ( isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on" ? "https://" : "http://" ) . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+    $page_url = ( tags(isset($_SERVER["HTTPS"])) && tags($_SERVER["HTTPS"]) == "on" ? "https://" : "http://" ) . tags($_SERVER["SERVER_NAME"]) . tags($_SERVER["REQUEST_URI"]);
     // If contact form submited
-    $name = isset($_REQUEST['plscptf_contact_name']) ? $_REQUEST['plscptf_contact_name'] : "";
-    $email = isset($_REQUEST['plscptf_contact_email']) ? $_REQUEST['plscptf_contact_email'] : "";
-    $subject = isset($_REQUEST['plscptf_contact_subject']) ? $_REQUEST['plscptf_contact_subject'] : "";
-    $message = isset($_REQUEST['plscptf_contact_message']) ? $_REQUEST['plscptf_contact_message'] : "";
-    $send_copy = isset($_REQUEST['plscptf_contact_send_copy']) ? $_REQUEST['plscptf_contact_send_copy'] : "";
+    $name = tags(isset($_REQUEST['plscptf_contact_name'])) ? tags($_REQUEST['plscptf_contact_name']) : "";
+    $email = tags(isset($_REQUEST['plscptf_contact_email'])) ? tags($_REQUEST['plscptf_contact_email']) : "";
+    $subject = tags(isset($_REQUEST['plscptf_contact_subject'])) ? tags($_REQUEST['plscptf_contact_subject']) : "";
+    $message = tags(isset($_REQUEST['plscptf_contact_message'])) ? tags($_REQUEST['plscptf_contact_message']) : "";
+    $send_copy = tags(isset($_REQUEST['plscptf_contact_send_copy'])) ? tags($_REQUEST['plscptf_contact_send_copy']) : "";
     // If it is good
     if (true === $result) {
       $_SESSION['plscptf_send_mail'] = true;
@@ -116,7 +118,7 @@ if (!function_exists('plscptf_check_and_send')) {
     //die ('plscptf_check_and_send'); 
     global $result;
     $plscptf_options = get_option('PlusCaptcha_form_contact_options');
-    if (isset($_REQUEST['plscptf_contact_action'])) {
+    if (tags(isset($_REQUEST['plscptf_contact_action']))) {
       // Check all input data
       $result = plscptf_check_form();
     }
@@ -147,13 +149,13 @@ if (!function_exists('plscptf_check_form')) {
     $error_message['error_message'] = __("Message text required.", 'PlusCaptcha');
     $error_message['error_form'] = __("Please correct your input data below and try again.", 'PlusCaptcha');
     // Check information
-    if ("" != $_REQUEST['plscptf_contact_name'])
+    if ("" != tags($_REQUEST['plscptf_contact_name']))
       unset($error_message['error_name']);
-    if ("" != $_REQUEST['plscptf_contact_email'] && preg_match("/^(?:[a-z0-9]+(?:[a-z0-9\-_\.]+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})$/i", trim($_REQUEST['plscptf_contact_email'])))
+    if ("" != tags($_REQUEST['plscptf_contact_email']) && preg_match("/^(?:[a-z0-9]+(?:[a-z0-9\-_\.]+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})$/i", tags(trim($_REQUEST['plscptf_contact_email']))))
       unset($error_message['error_email']);
-    if ("" != $_REQUEST['plscptf_contact_subject'])
+    if ("" != tags($_REQUEST['plscptf_contact_subject']))
       unset($error_message['error_subject']);
-    if ("" != $_REQUEST['plscptf_contact_message'])
+    if ("" != tags($_REQUEST['plscptf_contact_message']))
       unset($error_message['error_message']);
     
     PlusCaptcha_validate_contact_form($error_message);
@@ -191,7 +193,7 @@ if (!function_exists('plscptf_send_mail')) {
     }
     if ("" != $to) {
       // subject
-      $subject = $_REQUEST['plscptf_contact_subject'];
+      $subject = tags($_REQUEST['plscptf_contact_subject']);
       $user_info_string = '';
       $userdomain = '';
       $form_action_url = '';
@@ -199,13 +201,13 @@ if (!function_exists('plscptf_send_mail')) {
       $headers = "";
 
       if (getenv('HTTPS') == 'on') {
-        $form_action_url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        $form_action_url = 'https://' . tags($_SERVER['HTTP_HOST']) . tags($_SERVER['REQUEST_URI']);
       } else {
-        $form_action_url = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        $form_action_url = 'http://' . tags($_SERVER['HTTP_HOST']) . tags($_SERVER['REQUEST_URI']);
       }
 
       if ($plscptf_options['plscptf_display_add_info'] == 1) {
-        $userdomain = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+        $userdomain = gethostbyaddr(tags($_SERVER['REMOTE_ADDR']));
         if ($plscptf_options['plscptf_display_add_info'] == 1 ||
                 $plscptf_options['plscptf_display_sent_from'] == 1 ||
                 $plscptf_options['plscptf_display_coming_from'] == 1 ||
@@ -216,7 +218,7 @@ if (!function_exists('plscptf_send_mail')) {
         }
         if ($plscptf_options['plscptf_display_sent_from'] == 1) {
           $user_info_string .= '<tr>
-							<td>' . __('Sent from (ip address)', 'PlusCaptcha') . ':</td><td>' . $_SERVER['REMOTE_ADDR'] . " ( " . $userdomain . " )" . '</td>
+							<td>' . __('Sent from (ip address)', 'PlusCaptcha') . ':</td><td>' . tags($_SERVER['REMOTE_ADDR']) . " ( " . $userdomain . " )" . '</td>
 						</tr>';
         }
         if ($plscptf_options['plscptf_display_date_time'] == 1) {
@@ -231,7 +233,7 @@ if (!function_exists('plscptf_send_mail')) {
         }
         if ($plscptf_options['plscptf_display_user_agent'] == 1) {
           $user_info_string .= '<tr>
-							<td>' . __('Using (user agent)', 'PlusCaptcha') . ':</td><td>' . plscptf_clean_input($_SERVER['HTTP_USER_AGENT']) . '</td>
+							<td>' . __('Using (user agent)', 'PlusCaptcha') . ':</td><td>' . plscptf_clean_input(tags($_SERVER['HTTP_USER_AGENT'])) . '</td>
 						</tr>';
         }
       }
@@ -244,16 +246,16 @@ if (!function_exists('plscptf_send_mail')) {
 			<body>
 				<table>
 					<tr>
-						<td width="160">' . __("Name", 'PlusCaptcha') . '</td><td>' . $_REQUEST['plscptf_contact_name'] . '</td>
+						<td width="160">' . __("Name", 'PlusCaptcha') . '</td><td>' . tags($_REQUEST['plscptf_contact_name']) . '</td>
 					</tr>
 					<tr>
-						<td>' . __("Email", 'PlusCaptcha') . '</td><td>' . $_REQUEST['plscptf_contact_email'] . '</td>
+						<td>' . __("Email", 'PlusCaptcha') . '</td><td>' . tags($_REQUEST['plscptf_contact_email']) . '</td>
 					</tr>
 					<tr>
-						<td>' . __("Subject", 'PlusCaptcha') . '</td><td>' . $_REQUEST['plscptf_contact_subject'] . '</td>
+						<td>' . __("Subject", 'PlusCaptcha') . '</td><td>' . tags($_REQUEST['plscptf_contact_subject']) . '</td>
 					</tr>
 					<tr>
-						<td>' . __("Message", 'PlusCaptcha') . '</td><td>' . $_REQUEST['plscptf_contact_message'] . '</td>
+						<td>' . __("Message", 'PlusCaptcha') . '</td><td>' . tags($_REQUEST['plscptf_contact_message']) . '</td>
 					</tr>
 					<tr>
 						<td>' . __("Site", 'PlusCaptcha') . '</td><td>' . get_bloginfo("url") . '</td>
@@ -272,9 +274,9 @@ if (!function_exists('plscptf_send_mail')) {
         $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
         // Additional headers
-        $headers .= 'From: ' . $_REQUEST['plscptf_contact_email'] . "\r\n";
-        if (isset($_REQUEST['plscptf_contact_send_copy']) && $_REQUEST['plscptf_contact_send_copy'] == 1)
-          wp_mail($_REQUEST['plscptf_contact_email'], stripslashes($subject), stripslashes($message), $headers, $attachments);
+        $headers .= 'From: ' . tags($_REQUEST['plscptf_contact_email']) . "\r\n";
+        if (tags(isset($_REQUEST['plscptf_contact_send_copy'])) && tags($_REQUEST['plscptf_contact_send_copy']) == 1)
+          wp_mail(tags($_REQUEST['plscptf_contact_email']), stripslashes($subject), stripslashes($message), $headers, $attachments);
 
         // Mail it
         return wp_mail($to, stripslashes($subject), stripslashes($message), $headers, $attachments);
@@ -285,9 +287,9 @@ if (!function_exists('plscptf_send_mail')) {
         $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
         // Additional headers
-        $headers .= 'From: ' . $_REQUEST['plscptf_contact_email'] . "\r\n";
-        if (isset($_REQUEST['plscptf_contact_send_copy']) && $_REQUEST['plscptf_contact_send_copy'] == 1)
-          @mail($_REQUEST['plscptf_contact_email'], stripslashes($subject), stripslashes($message), $headers);
+        $headers .= 'From: ' . tags($_REQUEST['plscptf_contact_email']) . "\r\n";
+        if (tags(isset($_REQUEST['plscptf_contact_send_copy'])) && tags($_REQUEST['plscptf_contact_send_copy']) == 1)
+          @mail(tags($_REQUEST['plscptf_contact_email']), stripslashes($subject), stripslashes($message), $headers);
 
         return @mail($to, stripslashes($subject), stripslashes($message), $headers);
       }

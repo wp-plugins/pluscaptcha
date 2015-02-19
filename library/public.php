@@ -1,13 +1,25 @@
 <?php
 
+if (!function_exists('tags')) {
+	# Clean
+	# Limpiar data
+	function tags($tags){  
+		$tags = strip_tags($tags);  
+		$tags = stripslashes($tags);  
+		$tags = htmlentities($tags);
+		$tags = addslashes($tags);
+		return trim($tags);  
+	}
+}
+
 /**
  * Get PlusCaptcha values from POST data
  * @return array
  */
 function PlusCaptcha_get_values() {
 	return array(
-		'sckey'		=> ( isset( $_POST[ 'sckey' ] ) ? $_POST[ 'sckey' ] : '' ),
-		'scvalue'	=> ( isset( $_POST[ 'scvalue' ] ) ? $_POST[ 'scvalue' ] : '' )
+		'sckey'		=> ( tags( isset( $_POST[ 'sckey' ]) ) ? tags($_POST[ 'sckey' ]) : '' ),
+		'scvalue'	=> ( tags( isset( $_POST[ 'scvalue' ]) ) ? tags($_POST[ 'scvalue' ]) : '' )
 	);
 }
 
@@ -260,7 +272,7 @@ function PlusCaptcha_registration_form() {
 function PlusCaptcha_authenticate($user) {
 	global $PlusCaptcha_instance;
 	//$scValues = PlusCaptcha_get_values();
-	if ( !empty( $_POST ) && get_result(simpleSessionGet("contacto", "")) == false ) {
+	if (  tags( !empty( $_POST ) ) && get_result(simpleSessionGet("contacto", "")) == false ) {
 		$user = new WP_Error( 'captcha_wrong', '<strong>' . __( 'ERROR', 'PlusCaptcha' ) . '</strong>: ' . __( PlusCaptcha_ERROR_MESSAGE, 'PlusCaptcha' ) );
 	}else{
 		//$_SESSION["passport"] = false;
@@ -353,7 +365,7 @@ function PlusCaptcha_signup_extra_fields($errors) {
  */
 function PlusCaptcha_wpmu_validate_user_signup($errors) {
 	global $PlusCaptcha_instance;
-	if ( $_POST['stage'] == 'validate-user-signup' ) {
+	if ( tags($_POST['stage']) == 'validate-user-signup' ) {
 		//$scValues = PlusCaptcha_get_values();
 		if ( get_result(simpleSessionGet("contacto", "")) == false ) {
 			$errors['errors']->add( 'captcha_wrong', '<strong>' . __( 'ERROR', 'PlusCaptcha' ) . '</strong>: ' . __(PlusCaptcha_ERROR_MESSAGE, 'PlusCaptcha' ) );

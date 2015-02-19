@@ -47,7 +47,7 @@ if (!class_exists('wpCommentFormInlineErrors')){
 
         function handleWpError($message, $title='', $args=array())
         {
-            if(!is_admin() && !empty($_POST['comment_post_ID']) && is_numeric($_POST['comment_post_ID'])){
+            if(!is_admin() && tags(!empty($_POST['comment_post_ID'])) && tags(is_numeric($_POST['comment_post_ID']))){
                 $_SESSION['formError'] = $message;
                 $denied = array('submit', 'comment_post_ID', 'comment_parent');
                 foreach($_POST as $key => $value){
@@ -56,7 +56,7 @@ if (!class_exists('wpCommentFormInlineErrors')){
                     }
                 }
                 session_write_close();
-                wp_safe_redirect(get_permalink($_POST['comment_post_ID']) . '#formError', 302);
+                wp_safe_redirect(get_permalink(tags($_POST['comment_post_ID'])) . '#formError', 302);
                 exit;
             } else {
                 _default_wp_die_handler($message, $title, $args);

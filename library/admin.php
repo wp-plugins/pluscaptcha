@@ -1,14 +1,16 @@
 <?php
 
-# Clean
-# Limpiar data
-function tags($tags){  
-	$tags = strip_tags($tags);  
-	$tags = stripslashes($tags);  
-	$tags = htmlentities($tags);
-	$tags = addslashes($tags);
-	return trim($tags);  
-} 
+if (!function_exists('tags')) {
+	# Clean
+	# Limpiar data
+	function tags($tags){  
+		$tags = strip_tags($tags);  
+		$tags = stripslashes($tags);  
+		$tags = htmlentities($tags);
+		$tags = addslashes($tags);
+		return trim($tags);  
+	}
+}
 
 tags($_REQUEST);
 tags($_POST);
@@ -108,7 +110,7 @@ function PlusCaptcha_register_form() {
   //var_export($_POST);
   // See if the user has posted us some information
   // If they did, this hidden field will be set to 'Y'
-  if ((isset($_POST[$hidden_field_name])) && ($_POST[$hidden_field_name] == 'Y')) {
+  if ((tags(isset($_POST[$hidden_field_name]))) && (tags($_POST[$hidden_field_name]) == 'Y')) {
     $result = json_decode(submit_register_form($_POST), true);
     if ($result['error']) {
       if (!empty($result['html'])) {
@@ -116,7 +118,7 @@ function PlusCaptcha_register_form() {
       }
     } else {
       update_option('uuid_key_speci_to_generate_captchas', $result['app_id']);
-	  update_option('PlusCaptcha_feedback_quemejoraria', $_POST["PlusCaptcha_feedback_quemejoraria"]);
+	  update_option('PlusCaptcha_feedback_quemejoraria', tags($_POST["PlusCaptcha_feedback_quemejoraria"]));
       //update_option('PlusCaptcha_key', $result['key']);
       //update_option('PlusCaptcha_secret', $result['secret']);
 
@@ -136,8 +138,8 @@ function PlusCaptcha_register_form() {
 	$form_html = "NONE";
   }
   // Fill Register Form fields
-  $website = json_encode(empty($_POST['website']) ? "http://{$_SERVER['SERVER_NAME']}/" : $_POST['website']);
-  $email = json_encode($_POST['email']);
+  $website = json_encode(tags(empty($_POST['website'])) ? "http://{".tags($_SERVER['SERVER_NAME'])."}/" : tags($_POST['website']));
+  $email = json_encode(tags($_POST['email']));
   
   //jQuery('<div><input type="text" class="field" name="dynamic[]" value="' + i + '" /></div>').fadeIn('slow').appendTo('.inputs');
   $form_html .= "<script type=\"text/javascript\" language=\"javascript\">\n";
@@ -148,20 +150,20 @@ function PlusCaptcha_register_form() {
   $form_html .= "    jQuery('input[name=website]').val($website);\n";
   $form_html .= "    jQuery('input[name=email]').val($email);\n";
 
-  if (isset($_POST['language'])) {
-    $language = (int) $_POST['language'];
+  if (tags(isset($_POST['language']))) {
+    $language = (int) tags($_POST['language']);
     $form_html .= "    jQuery('select[name=language]').val($language);\n";
   }
-  if (isset($_POST['category'])) {
-    $category = (int) $_POST['category'];
+  if (tags(isset($_POST['category']))) {
+    $category = (int) tags($_POST['category']);
     $form_html .= "    jQuery('select[name=category]').val($category);\n";
   }
-  if (isset($_POST['site_category'])) {
-    $site_category = (int) $_POST['site_category'];
+  if (tags(isset($_POST['site_category']))) {
+    $site_category = (int) tags($_POST['site_category']);
     $form_html .= "    jQuery('select[name=site_category]').val($site_category);\n";
   }
-  if (isset($_POST['gender'])) {
-    $gender = (int) $_POST['gender'];
+  if (tags(isset($_POST['gender']))) {
+    $gender = (int) tags($_POST['gender']);
     $form_html .= "    jQuery('select[name=gender]').val($gender);\n";
   }
   $form_html .= "</script>\n";
@@ -209,12 +211,12 @@ function sweetcatpcha_main_settings($ignore_post = false) {
 
   // See if the user has posted us some information
   // If they did, this hidden field will be set to 'Y'
-  if ((!$ignore_post) && (isset($_POST[$hidden_field_name])) && ($_POST[$hidden_field_name] == 'Y')) {
+  if ((!$ignore_post) && (tags(isset($_POST[$hidden_field_name]))) && (tags($_POST[$hidden_field_name]) == 'Y')) {
     $rs = TRUE;
 
     // Read their posted value
     foreach ($PlusCaptcha_options as $opt_name => $v) {
-      $opt_val = isset($_POST[$opt_name]) ? $_POST[$opt_name] : null;
+      $opt_val = tags(isset($_POST[$opt_name])) ? tags($_POST[$opt_name]) : null;
 
       // Save the posted value in the database
       update_option($opt_name, $opt_val);
@@ -286,10 +288,10 @@ function plscptf_settings_save() {
   $userslogin = $wpdb->get_col("SELECT user_login FROM  $wpdb->users ", 0);
   $plscptf_options_submit = array();
   // Save data for settings page
-  $plscptf_options_submit['plscptf_user_email'] = $_REQUEST['plscptf_user_email'];
-  $plscptf_options_submit['plscptf_custom_email'] = $_REQUEST['plscptf_custom_email'];
-  $plscptf_options_submit['plscptf_select_email'] = $_REQUEST['plscptf_select_email'];
-  $plscptf_options_submit['plscptf_additions_options'] = isset($_REQUEST['plscptf_additions_options']) ? $_REQUEST['plscptf_additions_options'] : 0;
+  $plscptf_options_submit['plscptf_user_email'] = tags($_REQUEST['plscptf_user_email']);
+  $plscptf_options_submit['plscptf_custom_email'] = tags($_REQUEST['plscptf_custom_email']);
+  $plscptf_options_submit['plscptf_select_email'] = tags($_REQUEST['plscptf_select_email']);
+  $plscptf_options_submit['plscptf_additions_options'] = tags(isset($_REQUEST['plscptf_additions_options'])) ? tags($_REQUEST['plscptf_additions_options']) : 0;
   if ($plscptf_options_submit['plscptf_additions_options'] == 0) {
     $plscptf_options_submit['plscptf_send_copy'] = 0;
     $plscptf_options_submit['plscptf_from_field'] = get_bloginfo('name');
@@ -308,16 +310,16 @@ function plscptf_settings_save() {
     $plscptf_options_submit['plscptf_thank_text'] = __("Thank you for contacting us.", 'PlusCaptcha');
     $plscptf_options_submit['plscptf_redirect_url'] = '';
   } else {
-    $plscptf_options_submit['plscptf_send_copy'] = isset($_REQUEST['plscptf_send_copy']) ? $_REQUEST['plscptf_send_copy'] : 0;
-    $plscptf_options_submit['plscptf_mail_method'] = $_REQUEST['plscptf_mail_method'];
-    $plscptf_options_submit['plscptf_from_field'] = $_REQUEST['plscptf_from_field'];
-    $plscptf_options_submit['plscptf_display_add_info'] = isset($_REQUEST['plscptf_display_add_info']) ? 1 : 0;
-    $plscptf_options_submit['plscptf_change_label'] = isset($_REQUEST['plscptf_change_label']) ? 1 : 0;
+    $plscptf_options_submit['plscptf_send_copy'] = tags(isset($_REQUEST['plscptf_send_copy'])) ? tags($_REQUEST['plscptf_send_copy']) : 0;
+    $plscptf_options_submit['plscptf_mail_method'] = tags($_REQUEST['plscptf_mail_method']);
+    $plscptf_options_submit['plscptf_from_field'] = tags($_REQUEST['plscptf_from_field']);
+    $plscptf_options_submit['plscptf_display_add_info'] = tags(isset($_REQUEST['plscptf_display_add_info'])) ? 1 : 0;
+    $plscptf_options_submit['plscptf_change_label'] = tags(isset($_REQUEST['plscptf_change_label'])) ? 1 : 0;
     if ($plscptf_options_submit['plscptf_display_add_info'] == 1) {
-      $plscptf_options_submit['plscptf_display_sent_from'] = isset($_REQUEST['plscptf_display_sent_from']) ? 1 : 0;
-      $plscptf_options_submit['plscptf_display_date_time'] = isset($_REQUEST['plscptf_display_date_time']) ? 1 : 0;
-      $plscptf_options_submit['plscptf_display_coming_from'] = isset($_REQUEST['plscptf_display_coming_from']) ? 1 : 0;
-      $plscptf_options_submit['plscptf_display_user_agent'] = isset($_REQUEST['plscptf_display_user_agent']) ? 1 : 0;
+      $plscptf_options_submit['plscptf_display_sent_from'] = tags(isset($_REQUEST['plscptf_display_sent_from'])) ? 1 : 0;
+      $plscptf_options_submit['plscptf_display_date_time'] = tags(isset($_REQUEST['plscptf_display_date_time'])) ? 1 : 0;
+      $plscptf_options_submit['plscptf_display_coming_from'] = tags(isset($_REQUEST['plscptf_display_coming_from'])) ? 1 : 0;
+      $plscptf_options_submit['plscptf_display_user_agent'] = tags(isset($_REQUEST['plscptf_display_user_agent'])) ? 1 : 0;
     } else {
       $plscptf_options_submit['plscptf_display_sent_from'] = 1;
       $plscptf_options_submit['plscptf_display_date_time'] = 1;
@@ -325,19 +327,19 @@ function plscptf_settings_save() {
       $plscptf_options_submit['plscptf_display_user_agent'] = 1;
     }
     if ($plscptf_options_submit['plscptf_change_label'] == 1) {
-      $plscptf_options_submit['plscptf_name_label'] = isset($_REQUEST['plscptf_name_label']) ? $_REQUEST['plscptf_name_label'] : $plscptf_options_submit['plscptf_name_label'];
-      $plscptf_options_submit['plscptf_email_label'] = isset($_REQUEST['plscptf_email_label']) ? $_REQUEST['plscptf_email_label'] : $plscptf_options_submit['plscptf_email_label'];
-      $plscptf_options_submit['plscptf_subject_label'] = isset($_REQUEST['plscptf_subject_label']) ? $_REQUEST['plscptf_subject_label'] : $plscptf_options_submit['plscptf_subject_label'];
-      $plscptf_options_submit['plscptf_message_label'] = isset($_REQUEST['plscptf_message_label']) ? $_REQUEST['plscptf_message_label'] : $plscptf_options_submit['plscptf_message_label'];
+      $plscptf_options_submit['plscptf_name_label'] = tags(isset($_REQUEST['plscptf_name_label'])) ? tags($_REQUEST['plscptf_name_label']) : $plscptf_options_submit['plscptf_name_label'];
+      $plscptf_options_submit['plscptf_email_label'] = tags(isset($_REQUEST['plscptf_email_label'])) ? tags($_REQUEST['plscptf_email_label']) : $plscptf_options_submit['plscptf_email_label'];
+      $plscptf_options_submit['plscptf_subject_label'] = tags(isset($_REQUEST['plscptf_subject_label'])) ? tags($_REQUEST['plscptf_subject_label']) : $plscptf_options_submit['plscptf_subject_label'];
+      $plscptf_options_submit['plscptf_message_label'] = tags(isset($_REQUEST['plscptf_message_label'])) ? tags($_REQUEST['plscptf_message_label']) : $plscptf_options_submit['plscptf_message_label'];
     } else {
       $plscptf_options_submit['plscptf_name_label'] = __("Name:", 'PlusCaptcha');
       $plscptf_options_submit['plscptf_email_label'] = __("E-Mail Address:", 'PlusCaptcha');
       $plscptf_options_submit['plscptf_subject_label'] = __("Subject:", 'PlusCaptcha');
       $plscptf_options_submit['plscptf_message_label'] = __("Message:", 'PlusCaptcha');
     }
-    $plscptf_options_submit['plscptf_action_after_send'] = $_REQUEST['plscptf_action_after_send'];
-    $plscptf_options_submit['plscptf_thank_text'] = $_REQUEST['plscptf_thank_text'];
-    $plscptf_options_submit['plscptf_redirect_url'] = $_REQUEST['plscptf_redirect_url'];
+    $plscptf_options_submit['plscptf_action_after_send'] = tags($_REQUEST['plscptf_action_after_send']);
+    $plscptf_options_submit['plscptf_thank_text'] = tags($_REQUEST['plscptf_thank_text']);
+    $plscptf_options_submit['plscptf_redirect_url'] = tags($_REQUEST['plscptf_redirect_url']);
   }
   $plscptf_options = array_merge($plscptf_options, $plscptf_options_submit);
   if ($plscptf_options_submit['plscptf_action_after_send'] == 0
@@ -357,7 +359,7 @@ function plscptf_settings_save() {
       $error .=__("Such user does not exist. Settings not saved.", 'PlusCaptcha');
     }
   } else {
-    if ( isset($_REQUEST['PlusCaptcha_form_contact']) ) {
+    if ( tags(isset($_REQUEST['PlusCaptcha_form_contact'])) ) {
       if ($plscptf_options_submit['plscptf_custom_email'] != "" && preg_match("/^((?:[a-z0-9]+(?:[a-z0-9\-_\.]+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", trim($plscptf_options_submit['plscptf_custom_email']))) {
         update_option('PlusCaptcha_form_contact_options', $plscptf_options, '', 'yes');
       $message = __("Options saved.", 'PlusCaptcha');

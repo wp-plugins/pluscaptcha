@@ -1,5 +1,5 @@
 <!-- Additional options in admin PlusCaptcha Settings -->
-<?php 
+<?php
 global $error, $wpdb; 
 $userslogin = $wpdb->get_col("SELECT user_login FROM  $wpdb->users ", 0);
 ?>

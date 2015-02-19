@@ -1,6 +1,6 @@
 === PlusCaptcha ===
 Contributors: PlusCaptcha
-Version: 2.0.6
+Version: 2.0.14
 Tags: pluscaptcha, captcha, antispam, comment, catcha, registration, match captcha, lost password, login, spam, images captcha, capcha, captha, ecology, ecoplus, plus, buddypress, contact form 7, sweetcaptcha, text captcha, multilingual, register, admin, ajax, image, images, keycaptcha, plugin, post, akismet, wpmu, re captcha, recaptcha, wordpress captcha, picture captcha
 Requires at least: 3.0.0
 Tested up to: 4.0.0
@@ -133,6 +133,9 @@ At this point, **your account was created automatically (NEW FEATURE!) and you d
 
 == Changelog ==
 
+= 2.0.10 =
+* Cross-site scripting (XSS) loged user side fixed. Thanks to Carlo Pelliccioni @ Hacktive Security
+
 = 2.0.6 =
 * Fixed security things reported by security.szurek.pl, Thanks!
 
@@ -183,6 +186,9 @@ Credits: Mistakes reported to emergency@pluscaptcha.com (Thank to Claude @ Norwo
 * Do not forget feedback to support[at]pluscaptcha.com.
 
 == Upgrade Notice ==
+
+= 2.0.10 =
+* Cross-site scripting (XSS) loged user side fixed. Thanks to Carlo Pelliccioni @ Hacktive Security
 
 = 2.0.6 =
 * Fixed security things reported by security.szurek.pl, Thanks!

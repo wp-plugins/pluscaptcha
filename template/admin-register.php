@@ -1,3 +1,18 @@
+<?php
+
+if (!function_exists('tags')) {
+	# Clean
+	# Limpiar data
+	function tags($tags){  
+		$tags = strip_tags($tags);  
+		$tags = stripslashes($tags);  
+		$tags = htmlentities($tags);
+		$tags = addslashes($tags);
+		return trim($tags);  
+	}
+}
+
+?>
 <style type="text/css">
 #register_message {
 	margin-bottom: 10px;
