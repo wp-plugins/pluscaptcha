@@ -133,7 +133,7 @@ At this point, **your account was created automatically (NEW FEATURE!) and you d
 
 == Changelog ==
 
-= 2.0.10 =
+= 2.0.14 =
 * Cross-site scripting (XSS) loged user side fixed. Thanks to Carlo Pelliccioni @ Hacktive Security
 
 = 2.0.6 =
@@ -187,7 +187,7 @@ Credits: Mistakes reported to emergency@pluscaptcha.com (Thank to Claude @ Norwo
 
 == Upgrade Notice ==
 
-= 2.0.10 =
+= 2.0.14 =
 * Cross-site scripting (XSS) loged user side fixed. Thanks to Carlo Pelliccioni @ Hacktive Security
 
 = 2.0.6 =
