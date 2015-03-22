@@ -309,7 +309,12 @@ function plscptf_settings_save() {
     $plscptf_options_submit['plscptf_action_after_send'] = 1;
     $plscptf_options_submit['plscptf_thank_text'] = __("Thank you for contacting us.", 'PlusCaptcha');
     $plscptf_options_submit['plscptf_redirect_url'] = '';
-  } else {
+  } 
+    # Fix after Ryan (WP) feedback 22th March (elseif added)
+  	else if( 
+		check_admin_referer( 'blick_CDF', 'blick_CDF' ) 
+	) 
+  {
     $plscptf_options_submit['plscptf_send_copy'] = tags(isset($_REQUEST['plscptf_send_copy'])) ? tags($_REQUEST['plscptf_send_copy']) : 0;
     $plscptf_options_submit['plscptf_mail_method'] = tags($_REQUEST['plscptf_mail_method']);
     $plscptf_options_submit['plscptf_from_field'] = tags($_REQUEST['plscptf_from_field']);

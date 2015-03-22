@@ -148,6 +148,8 @@ $userslogin = $wpdb->get_col("SELECT user_login FROM  $wpdb->users ", 0);
         <input style="margin-left: 20px; margin-right: 10px;" type="text" name="plscptf_redirect_url" value="<?php echo $plscptf_options['plscptf_redirect_url']; ?>" /> <span class="plscptf_info"><?php _e("Url", 'PlusCaptcha'); ?></span><br />
 		</div>
 		
+		<?php wp_nonce_field( 'blick_CDF', 'blick_CDF' ); ?>
+		
       </td>
 	  
 	  
